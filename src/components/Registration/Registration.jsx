@@ -14,18 +14,18 @@ const Registration = () => {
       if (user.username === '' && emailInput.includes('@')) {
         const userName = emailInput.slice(0, [emailInput.indexOf('@')]);
         setUser({ ...user, username: userName });
-      } else if (user.username !== '' && !emailInput.includes('@')) {
-        setUser({ ...user, username: '' });
+      } else{
+        null;
       }
     };
   
-    const handleInput = (event) => {
+    const handleSubmit = (event) => {
       event.preventDefault();
       console.log(user);
     };
   
     return (
-      <form className="form" onClick={handleInput}>
+      <form className="form" onSubmit={handleSubmit}>
         <input
           className="form__input"
           placeholder="Email Adress"
